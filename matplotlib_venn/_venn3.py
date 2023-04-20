@@ -389,7 +389,7 @@ def venn3(subsets, set_labels=('A', 'B', 'C'), set_colors=('r', 'g', 'b'), alpha
             label_positions = [centers[0] + np.array([-radii[0] / 2, radii[0]]),
                                centers[1] + np.array([radii[1] / 2, radii[1]]),
                                centers[2] + np.array([0.0, -radii[2] * 1.1])]
-            labels = [ax.text(pos[0], pos[1], txt, size='large') for (pos, txt) in zip(label_positions, set_labels)]
+            labels = [ax.text(pos[0], pos[1], txt, size='medium') for (pos, txt) in zip(label_positions, set_labels)]
             labels[0].set_horizontalalignment('right')
             labels[1].set_horizontalalignment('left')
             labels[2].set_verticalalignment('top')
@@ -400,7 +400,7 @@ def venn3(subsets, set_labels=('A', 'B', 'C'), set_colors=('r', 'g', 'b'), alpha
             label_positions = [centers[0] + np.array([0.0, - radii[0] - padding]),
                                centers[1] + np.array([0.0, - radii[1] - padding]),
                                centers[2] + np.array([0.0, - radii[2] - padding])]
-            labels = [ax.text(pos[0], pos[1], txt, size='large', ha='center', va='top') for (pos, txt) in zip(label_positions, set_labels)]
+            labels = [ax.text(pos[0], pos[1], txt, size='medium', ha='center', va='top') for (pos, txt) in zip(label_positions, set_labels)]
     else:
         labels = None
     return VennDiagram(patches, subset_labels, labels, centers, radii)
